@@ -1,0 +1,130 @@
+@use "../globals/variables";
+
+.fb-container {
+  font-size: 1em;
+  outline: 1px solid black;
+
+  &__contents {
+    font-size: 1em;
+  }
+
+  .fb-contents {
+    width: min(50rem, 95%);
+    margin-inline: auto;
+    font-size: 1em;
+    &__header {
+      font-size: 1em;
+      padding: 1em 0;
+      svg {
+        font-size: 1em;
+        width: 10em;
+        margin-inline: auto;
+        display: block;
+      }
+    }
+
+    &__body {
+      font-size: 1em;
+    }
+
+    .fb-contents-body {
+      font-size: 1em;
+      &__contents {
+        font-size: 1em;
+        // outline: 1px solid black;
+        .fb-form {
+          font-size: 1em;
+
+          & > * + * {
+            margin: 0.5em 0;
+          }
+          &__form-group {
+            font-size: 1em;
+            input {
+              font-size: 1em;
+              box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+              outline: none;
+              border-style: none;
+              background-color: #e8f0fe;
+              width: 100%;
+              padding: 0.5em;
+
+              &::placeholder {
+                font-size: 1em;
+                color: rgba(0, 0, 0, 0.5);
+              }
+
+              &:focus-within {
+                box-shadow: 0 1px 5px 2px rgb(182, 155, 102, 0.2);
+                outline: 1px solid rgb(182, 155, 102);
+              }
+            }
+          }
+          button {
+            font-size: 1em;
+            font-weight: bolder;
+            padding: 1em 0;
+            border-radius: 0.5em;
+            width: 100%;
+            border-style: none;
+            outline: none;
+            color: variables.$secondary-color;
+            background-color: variables.$primary-color;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+          }
+        }
+
+        .fb-contents-bottom {
+          font-size: 1em;
+          &__contents {
+            font-size: 1em;
+
+            .divide-column {
+              font-size: 1em;
+              padding: 1.3em 0;
+            }
+
+            .top {
+              font-size: 1em;
+              a {
+                text-align: center;
+                font-size: 1em;
+                display: block;
+                text-decoration: none;
+                color: variables.$primary-color;
+              }
+            }
+
+            .bottom {
+              border-top: 1px solid #ada9a9;
+              font-size: 1em;
+              position: relative;
+
+              &::before {
+                position: absolute;
+                content: "or";
+                bottom: 80%;
+                background-color: variables.$secondary-color;
+                z-index: 5;
+
+                padding: 0.5em;
+                left: 50%;
+                transform: translateX(-50%);
+              }
+              button {
+                font-size: 1em;
+                font-weight: bolder;
+                background-color: transparent;
+                border: 1px solid #ada9a9;
+                width: fit-content;
+                margin-inline: auto;
+                display: block;
+                padding: 0.3em 2em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

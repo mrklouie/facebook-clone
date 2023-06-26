@@ -1,0 +1,14 @@
+$primary-color: #1877f2;
+$secondary-color: #fff;
+$accent-color: #90949c;
+
+$font-weight: (
+  regular: "Helvetica Roman",
+  light: "Helvetica Light",
+  medium: "Helvetica Medium",
+  bold: "Helvetica Bold",
+);
+
+@function getFontWeight($weight) {
+  @return map-get($font-weight, $weight);
+}
