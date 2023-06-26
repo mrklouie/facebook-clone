@@ -1,8 +1,12 @@
+require("dotenv").config();
 require("express-async-errors");
 
+const connectionString =
+  "mongodb+srv://mrklouie:Marklouie123@nodeexpressprojects.ddpamjn.mongodb.net/facebook-clone?retryWrites=true&w=majority";
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 8080;
+const connectDB = require("./db/connect");
 
 //middlewares
 const loginRoute = require("./routes/login");
@@ -32,7 +36,18 @@ app.get("/", (req, res) => {
 
 app.use("/login", loginRoute);
 
-app.listen(port, console.log(`http://localhost:${port}/`));
+const start = async () => {
+  try {
+    await connectDB(connectionString);
+    app.listen(port, console.log(`http://localhost:${port}/`));
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+// app.listen(port, console.log(`http://localhost:${port}/login`));
+
+start();
 
 app.use(notFound);
 app.use(errorHandler);
