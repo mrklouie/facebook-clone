@@ -4,7 +4,7 @@ let objFormData = {};
 const submitFormData = async (formData) => {
   console.log(formData);
   try {
-    const res = await fetch("http://localhost:8080/login", {
+    const res = await fetch("http://18.136.196.83/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
