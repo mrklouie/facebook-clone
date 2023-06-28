@@ -1,12 +1,12 @@
 $primary-color: #1877f2;
 $secondary-color: #fff;
-$accent-color: #90949c;
+$accent-color: #ada9a9;
 
 $font-weight: (
-  regular: "Helvetica Roman",
-  light: "Helvetica Light",
-  medium: "Helvetica Medium",
-  bold: "Helvetica Bold",
+  "light": 300,
+  "regular": 400,
+  "medium": 500,
+  "bold": 700,
 );
 
 @function getFontWeight($weight) {

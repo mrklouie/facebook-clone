@@ -38,7 +38,32 @@
             margin: 0.5em 0;
           }
           &__form-group {
+            position: relative;
             font-size: 1em;
+
+            &#input-password {
+              display: flex;
+              align-items: center;
+            }
+
+            .show-password {
+              font-size: 1em;
+              position: absolute;
+              right: 2%;
+              background-color: #f5f6f7;
+              display: none;
+
+              &.active {
+                display: block;
+              }
+              & > span {
+                font-size: 0.85em;
+                font-weight: variables.getFontWeight("medium");
+                display: block;
+                color: RGB(53, 120, 229);
+              }
+            }
+
             input {
               font-size: 1em;
               box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
@@ -46,7 +71,11 @@
               border-style: none;
               background-color: #e8f0fe;
               width: 100%;
-              padding: 0.5em;
+              padding: 0.75em;
+
+              &[type="password"] {
+                padding: 0.75em 4em 0.75em 0.75em !important;
+              }
 
               &::placeholder {
                 font-size: 1em;
@@ -62,7 +91,7 @@
           button {
             font-size: 1em;
             font-weight: bolder;
-            padding: 1em 0;
+            padding: 0.75em 0;
             border-radius: 0.5em;
             width: 100%;
             border-style: none;
@@ -70,6 +99,26 @@
             color: variables.$secondary-color;
             background-color: variables.$primary-color;
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+
+            & > svg {
+              font-size: 1em;
+              display: block;
+              width: 1.5em;
+              height: auto;
+              display: none;
+
+              &.active {
+                display: block;
+              }
+            }
+
+            & > span {
+              display: none;
+
+              &.active {
+                display: block;
+              }
+            }
           }
         }
 
@@ -95,7 +144,7 @@
             }
 
             .bottom {
-              border-top: 1px solid #ada9a9;
+              border-top: 1px solid variables.$accent-color;
               font-size: 1em;
               position: relative;
 
@@ -112,17 +161,107 @@
               }
               button {
                 font-size: 1em;
-                font-weight: bolder;
                 background-color: transparent;
-                border: 1px solid #ada9a9;
-                width: fit-content;
+                border: 1px solid variables.$accent-color;
+                width: 75%;
                 margin-inline: auto;
                 display: block;
-                padding: 0.3em 2em;
+                padding: 0.5em 0;
+                border-radius: 0.2em;
               }
             }
           }
         }
+      }
+    }
+  }
+}
+
+.footer-container {
+  margin-top: 5em;
+  font-size: 0.85em;
+  &__contents {
+    font-size: 1em;
+    .footer-languages-flex-container {
+      font-size: 1em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      & > * {
+        width: 100%;
+      }
+
+      .flex-item {
+        font-size: 1em;
+        text-align: center;
+        & > ul {
+          font-size: 1em;
+
+          & > * + * {
+            margin: 0.3em 0;
+          }
+          li {
+            list-style-type: none;
+            font-size: 1em;
+
+            a {
+              color: rgb(87, 107, 149);
+              font-size: 1em;
+              display: block;
+              text-decoration: none;
+
+              &#language-us {
+                color: #888888;
+                font-weight: variables.getFontWeight("medium");
+              }
+            }
+            .icon {
+              margin-inline: auto;
+              width: 1.5em;
+              height: 1.5em;
+              border-radius: 0.2em;
+              border: 1px solid #576b95;
+              display: grid;
+              place-items: center;
+            }
+          }
+        }
+      }
+
+      &__left {
+      }
+
+      &__right {
+      }
+    }
+
+    .main-footer {
+      font-size: 1em;
+      margin-top: 1.2em;
+      color: variables.$accent-color;
+
+      & > * + * {
+        margin: 1em 0;
+      }
+      &__top {
+        font-size: 0.75em;
+
+        & > ul {
+          font-size: 1em;
+          justify-content: center;
+          display: flex;
+          align-items: center;
+          gap: 0.5em;
+          li {
+            font-size: 1em;
+            display: block;
+            list-style-type: none;
+          }
+        }
+      }
+
+      &__bottom {
+        text-align: center;
       }
     }
   }

@@ -61,7 +61,7 @@
         <div class="fb-contents__body">
           <div class="fb-contents-body">
             <div class="fb-contents-body__contents">
-              <form action="#" class="fb-form">
+              <form class="fb-form">
                 <div class="fb-form__form-group">
                   <input
                     type="text"
@@ -69,14 +69,58 @@
                     placeholder="Mobile number or email"
                   />
                 </div>
-                <div class="fb-form__form-group">
+                <div id="input-password" class="fb-form__form-group">
                   <input
                     type="password"
                     name="password"
                     placeholder="Password"
                   />
+                  <div class="show-password">
+                    <span class="active">SHOW</span>
+                  </div>
                 </div>
-                <button><span>Login</span></button>
+                <button>
+                  <span id="loginButton" class="active">Login</span>
+                  <svg
+                    id="loadingSvg"
+                    class=""
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    style="
+                      margin: auto;
+                      background: none;
+                      shape-rendering: auto;
+                      animation-play-state: running;
+                      animation-delay: 0s;
+                    "
+                    viewBox="0 0 100 100"
+                    preserveAspectRatio="xMidYMid"
+                  >
+                    <circle
+                      cx="50"
+                      cy="50"
+                      fill="none"
+                      stroke="#ffffff"
+                      stroke-width="7"
+                      r="35"
+                      stroke-dasharray="164.93361431346415 56.97787143782138"
+                      style="animation-play-state: running; animation-delay: 0s"
+                    >
+                      <animateTransform
+                        attributeName="transform"
+                        type="rotate"
+                        repeatCount="indefinite"
+                        dur="1s"
+                        values="0 50 50;360 50 50"
+                        keyTimes="0;1"
+                        style="
+                          animation-play-state: running;
+                          animation-delay: 0s;
+                        "
+                      ></animateTransform>
+                    </circle>
+                  </svg>
+                </button>
               </form>
 
               <div class="fb-contents-body__bottom fb-contents-bottom">
@@ -92,8 +136,49 @@
             </div>
           </div>
         </div>
+
+        <footer class="footer-container">
+          <div class="footer-container__contents">
+            <div class="footer-languages-flex-container">
+              <div class="footer-languages-flex-container__left flex-item">
+                <ul>
+                  <li><a id="language-us" href="#">English US</a></li>
+                  <li><a href="#">Bisaya</a></li>
+                  <li><a href="#">日本語</a></li>
+                  <li><a href="#">Português (Brasil)</a></li>
+                </ul>
+              </div>
+              <div class="footer-languages-flex-container__right flex-item">
+                <ul>
+                  <li><a href="#">Filipino</a></li>
+                  <li><a href="#">Español</a></li>
+                  <li><a href="#">한국어</a></li>
+                  <li>
+                    <a href="#">
+                      <div class="icon"><span>+</span></div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="main-footer">
+              <div class="main-footer__top">
+                <ul>
+                  <li>About</li>
+                  <li>Help</li>
+                  <li>More</li>
+                </ul>
+              </div>
+              <div class="main-footer__bottom">
+                <p>Meta © 2023</p>
+              </div>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
     <script src="../js/form.js"></script>
+    <script src="../js/togglePassword.js"></script>
   </body>
 </html>
