@@ -1,0 +1,15 @@
+$primary-color: white;
+$secondary-color: #6fba0d;
+
+$font-weight: (
+  "light": 300,
+  "regular": 400,
+  "medium": 500,
+  "semiBold": 600,
+  "bold": 700,
+  "black": 900,
+);
+
+@function getFontWeight($weight) {
+  @return map-get($font-weight, $weight);
+}

@@ -1,0 +1,215 @@
+@use "../globals/variables";
+
+#disclaimer {
+  display: none;
+}
+.main-container {
+  font-size: clamp(0.75em, 1.5vw, 2rem);
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #113259;
+  background-image: linear-gradient(180deg, transparent, #b4dbe1);
+
+  & > img {
+    font-size: 1em;
+    display: none;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    &#mobile {
+      display: block;
+    }
+
+    &#desktop {
+      display: none;
+    }
+  }
+
+  &__stars {
+    font-size: 1em;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../assets/images/stars.png");
+    background-repeat: repeat;
+    display: grid;
+    place-items: center;
+
+    .main-contents {
+      width: 85%;
+      font-size: 1em;
+      &__texts {
+        text-align: center;
+        font-size: 1em;
+
+        & > .header {
+          font-size: 1em;
+          h1 {
+            font-size: 2em;
+            font-weight: variables.getFontWeight("black");
+          }
+        }
+
+        .desc {
+          margin: 1em 0;
+          font-size: 1em;
+          display: flex;
+          align-items: center;
+          flex-direction: column-reverse;
+          &__texts {
+            font-size: 1em;
+            p {
+              font-size: 1em;
+            }
+          }
+
+          &__images {
+            margin: 1em 0;
+            font-size: 1em;
+            img {
+              animation: float 3s ease-in-out infinite;
+              font-size: 1em;
+              display: block;
+              width: 5em;
+            }
+          }
+        }
+      }
+
+      &__button {
+        font-size: 1em;
+        & > button {
+          animation: glowing 1300ms infinite;
+          cursor: pointer;
+          font-size: 1em;
+          display: block;
+          padding: 2em;
+          background-color: variables.$secondary-color;
+          outline: none;
+          border-style: none;
+          border-radius: 5rem;
+          margin-inline: auto;
+          transition: transform 150ms ease-out;
+          will-change: transform;
+
+          &:hover {
+            transform: scale(0.9);
+          }
+
+          &:active {
+            transform: scale(0.85);
+          }
+          & > a {
+            font-size: 1em;
+            display: block;
+            font-weight: variables.getFontWeight("bold");
+            text-transform: uppercase;
+            text-decoration: none;
+            color: variables.$primary-color;
+          }
+        }
+      }
+    }
+  }
+  &__contents {
+    font-size: 1em;
+    color: variables.$primary-color;
+  }
+}
+
+@media (min-width: 600px) {
+  #disclaimer {
+    font-size: clamp(0.75rem, 1.5vw, 2rem);
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+
+    h2 {
+      font-size: 1em;
+    }
+  }
+
+  .main-container {
+    & > img {
+      &#mobile {
+        display: none;
+      }
+
+      &#desktop {
+        display: block;
+      }
+    }
+
+    &__stars {
+      .main-contents {
+        width: 85%;
+        &__texts {
+          & > .header {
+            h1 {
+            }
+          }
+
+          .desc {
+            font-size: 1em;
+            display: flex;
+            gap: 6em;
+            align-items: center;
+            flex-direction: unset;
+            &__texts {
+              p {
+              }
+            }
+
+            &__images {
+              img {
+              }
+            }
+          }
+        }
+
+        &__button {
+          & > button {
+            & > a {
+            }
+          }
+        }
+      }
+    }
+    &__contents {
+    }
+  }
+}
+
+@keyframes glowing {
+  0% {
+    background-color: #2ba805;
+    box-shadow: 0 0 5px #2ba805;
+  }
+  50% {
+    background-color: #49e819;
+    box-shadow: 0 0 20px #49e819;
+  }
+  100% {
+    background-color: #2ba805;
+    box-shadow: 0 0 5px #2ba805;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-10px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}

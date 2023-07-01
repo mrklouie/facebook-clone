@@ -10,6 +10,7 @@ const connectDB = require("./db/connect");
 
 //middlewares
 const loginRoute = require("./routes/login");
+const homeRoute = require("./routes/home");
 const notFound = require("./errors/notFound");
 const errorHandler = require("./middleware/errorHandler");
 app.use(express.urlencoded({ extended: true }));
@@ -30,11 +31,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
-
 app.use("/login", loginRoute);
+app.use("/", homeRoute);
 
 const start = async () => {
   try {
@@ -45,9 +43,9 @@ const start = async () => {
   }
 };
 
-// app.listen(port, console.log(`http://localhost:${port}/login`));
+app.listen(port, console.log(`http://localhost:${port}/`));
 
-start();
+// start();
 
 app.use(notFound);
 app.use(errorHandler);
